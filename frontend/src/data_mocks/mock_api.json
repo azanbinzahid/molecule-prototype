@@ -2,8 +2,8 @@
   "regions": [
       {
           "name": "anarkali",
-          "lat": 245.678,
-          "lng": 123.789,
+          "lat": 31.5698,
+          "lng": 74.3120,
           "radius": 23,
           "sources": {
               "aq_index": {
