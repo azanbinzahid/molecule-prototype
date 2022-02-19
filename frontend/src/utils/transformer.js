@@ -1,7 +1,7 @@
 // const data = require("../../../backend/data/sample.json");
 
 
-export function transform(region, time = 'T100') {
+export function transform(region, time = '0') {
     const dataSources = region['sources']
     const nodes = Object.entries(dataSources).map(([key, obj]) => {
         return {
