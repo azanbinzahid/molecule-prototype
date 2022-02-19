@@ -1,0 +1,127 @@
+{
+  "regions": [
+      {
+          "name": "anarkali",
+          "lat": 245.678,
+          "lng": 123.789,
+          "radius": 23,
+          "sources": {
+              "aq_index": {
+                  "source": "json",
+                  "coefficient": 1,
+                  "metadata": {
+                      "url": "/abc"
+                  },
+                  "trasnformer": "sdk/abc",
+                  "data": {
+                      "T100": {
+                          "value": 1
+                      },
+                      "T101": {
+                          "value": 2
+                      },
+                      "T102": {
+                          "value": 3
+                      }
+                  }
+              },
+              "traffic_congession_index": {
+                  "source": "json",
+                  "coefficient": 1.5,
+                  "metadata": {
+                      "url": "/abc"
+                  },
+                  "trasnformer": "sdk/abc",
+                  "data": {
+                      "T100": {
+                          "value": 3
+                      },
+                      "T101": {
+                          "value": 4
+                      },
+                      "T102": {
+                          "value": 5
+                      }
+                  }
+              },
+              "deforestation_index": {
+                "source": "json",
+                "coefficient": 1.5,
+                "metadata": {
+                    "url": "/abc"
+                },
+                "trasnformer": "sdk/abc",
+                "data": {
+                    "T100": {
+                        "value": 3
+                    },
+                    "T101": {
+                        "value": 4
+                    },
+                    "T102": {
+                        "value": 5
+                    }
+                }
+            },
+            "industry_density_index": {
+              "source": "json",
+              "coefficient": 1.5,
+              "metadata": {
+                  "url": "/abc"
+              },
+              "trasnformer": "sdk/abc",
+              "data": {
+                  "T100": {
+                      "value": 8
+                  },
+                  "T101": {
+                      "value": 4
+                  },
+                  "T102": {
+                      "value": 5
+                  }
+              }
+          },
+          "literacy_rate_index": {
+            "source": "json",
+            "coefficient": 1.5,
+            "metadata": {
+                "url": "/abc"
+            },
+            "trasnformer": "sdk/abc",
+            "data": {
+                "T100": {
+                    "value": 8
+                },
+                "T101": {
+                    "value": 4
+                },
+                "T102": {
+                    "value": 5
+                }
+            }
+        },
+              "population_index": {
+                  "source": "json",
+                  "coefficient": 3.5,
+                  "metadata": {
+                      "url": "/abc"
+                  },
+                  "trasnformer": "sdk/abc",
+                  "data": {
+                      "T100": {
+                          "value": 7
+                      },
+                      "T101": {
+                          "value": 2.8
+                      },
+                      "T102": {
+                          "value": 13
+                      }
+                  }
+              }
+
+          }
+      }
+  ]
+}

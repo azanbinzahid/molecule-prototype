@@ -1,6 +1,6 @@
 {
   "nodes": [
-    {"id":"Anarkali", "group":1, "val": 100},
+    {"id":"Anarkali", "group":1, "val": 100, "isRoot": true},
     {"id": "Industry", "group":2, "val": 1},
     {"id": "Greenry", "group":2, "val": 10}
   ],

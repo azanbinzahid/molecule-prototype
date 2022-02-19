@@ -1,12 +1,13 @@
-const data = require("../../../backend/data/sample.json");
+// const data = require("../../../backend/data/sample.json");
 
 
-function transform(region, time = 'T100') {
+export function transform(region, time = 'T100') {
     const dataSources = region['sources']
     const nodes = Object.entries(dataSources).map(([key, obj]) => {
         return {
             id: key,
-            level: obj['data'][time]['value'],
+            isRoot: key === 'aq_index' ? true : false,
+            val: obj['data'][time]['value'],
             coefficient: obj['coefficient'],
         }
     })
@@ -17,7 +18,11 @@ function transform(region, time = 'T100') {
             value: obj['data'][time]['value'],
         }
     })
-    console.log(nodes, links)
+    return {
+        nodes,
+        links
+    }
+    // console.log(nodes, links)
 }
 
 
@@ -29,4 +34,4 @@ function mapData(regions) {
 
 
 // test
-mapData(data['regions'])
+// mapData(data['regions'])
