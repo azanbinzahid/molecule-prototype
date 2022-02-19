@@ -1,11 +1,11 @@
 {
   "nodes": [
-    {"id":"Anarkali", "group":1, "level": 3},
-    {"id": "Greenry", "group":4, "level": 2},
-    {"id": "Industry", "group":10, "level": 1}
+    {"id":"Anarkali", "group":1, "val": 100},
+    {"id": "Industry", "group":2, "val": 1},
+    {"id": "Greenry", "group":2, "val": 10}
   ],
   "links": [
-    {"source": "Anarkali", "target": "Greenry", "value": 5},
-    {"source": "Anarkali", "target": "Industry", "value": 10}
+    {"source": "Anarkali", "target": "Greenry", "value": 100},
+    {"source": "Anarkali", "target": "Industry", "value": 100}
   ]
 }
