@@ -62,7 +62,7 @@
     }
   
     100% {
-      transform: scale(1.2, 1.2);
+      transform: scale(2.2, 2.2);
       opacity: 0;
     }
   }

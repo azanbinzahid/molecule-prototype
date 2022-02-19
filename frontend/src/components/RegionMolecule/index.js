@@ -16,17 +16,18 @@ import {
 import "./index.css";
 // console.log(RegionData)
 
-const region = transform(RegionData.regions[0]);
+// const region = transform(RegionData.regions[0]);
 
-const RegionMolecule = (props) => {
-  const regionName = RegionData.regions[0].name; //to change this to props
+const RegionMolecule = ({location}) => {
+  const region = transform(location)
+  const regionName = location.name; //to change this to props
   const [data, setData] = React.useState({});
   const fetchData = async () => {
     setData(region);
   };
   const handleTimeSeriesChange = (e, v) => {
     const val = v.toString();
-    const newData = transform(RegionData.regions[0], val);
+    const newData = transform(location, val);
     setData(newData);
   };
 
@@ -71,17 +72,19 @@ const RegionMolecule = (props) => {
     );
   }
 
-  LinearSliderWithLabel.propTypes = {
-    /**
-     * The value of the progress indicator for the determinate and buffer variants.
-     * Value between 0 and 100.
-     */
-    value: PropTypes.number.isRequired,
-  };
+  // LinearSliderWithLabel.propTypes = {
+  //   /**
+  //    * The value of the progress indicator for the determinate and buffer variants.
+  //    * Value between 0 and 100.
+  //    */
+  //   value: PropTypes.number.isRequired,
+  // };
 
   React.useEffect(() => {
     try {
-      fetchData();
+      if(!Object.keys(data).length){
+        fetchData();
+      }
     } catch (err) {
       throw ("CUSTOM ERROR", err);
     }

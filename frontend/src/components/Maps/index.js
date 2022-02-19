@@ -27,9 +27,9 @@ const MyMap = ({selectRegion}) => {
                 defaultZoom={zoom}
                 options={getMapOptions}
             >
-                {RegionData['regions'].map(region => {
+                {RegionData['regions'].map((region, index) => {
                     return <Marker
-                        key="1"
+                        key={index}
                         selectRegion={selectRegion}
                         lat={region.lat}
                         lng={region.lng}

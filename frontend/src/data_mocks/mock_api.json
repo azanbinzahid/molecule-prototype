@@ -122,6 +122,130 @@
               }
 
           }
-      }
+      },
+      {
+        "name": "Iqbal Town",
+        "lat": 31.5124,
+        "lng": 74.2845,
+        "radius": 23,
+        "sources": {
+            "aq_index": {
+                "source": "json",
+                "coefficient": 1,
+                "metadata": {
+                    "url": "/abc"
+                },
+                "trasnformer": "sdk/abc",
+                "data": {
+                    "0": {
+                        "value": 1
+                    },
+                    "-1": {
+                        "value": 2
+                    },
+                    "1": {
+                        "value": 3
+                    }
+                }
+            },
+            "traffic_congession_index": {
+                "source": "json",
+                "coefficient": 1.5,
+                "metadata": {
+                    "url": "/abc"
+                },
+                "trasnformer": "sdk/abc",
+                "data": {
+                    "0": {
+                        "value": 3
+                    },
+                    "-1": {
+                        "value": 4
+                    },
+                    "1": {
+                        "value": 5
+                    }
+                }
+            },
+            "deforestation_index": {
+              "source": "json",
+              "coefficient": 1.5,
+              "metadata": {
+                  "url": "/abc"
+              },
+              "trasnformer": "sdk/abc",
+              "data": {
+                  "0": {
+                      "value": 3
+                  },
+                  "-1": {
+                      "value": 4
+                  },
+                  "1": {
+                      "value": 5
+                  }
+              }
+          },
+          "industry_density_index": {
+            "source": "json",
+            "coefficient": 1.5,
+            "metadata": {
+                "url": "/abc"
+            },
+            "trasnformer": "sdk/abc",
+            "data": {
+                "0": {
+                    "value": 8
+                },
+                "-1": {
+                    "value": 4
+                },
+                "1": {
+                    "value": 5
+                }
+            }
+        },
+        "literacy_rate_index": {
+          "source": "json",
+          "coefficient": 1.5,
+          "metadata": {
+              "url": "/abc"
+          },
+          "trasnformer": "sdk/abc",
+          "data": {
+              "0": {
+                  "value": 8
+              },
+              "-1": {
+                  "value": 4
+              },
+              "1": {
+                  "value": 5
+              }
+          }
+      },
+            "population_index": {
+                "source": "json",
+                "coefficient": 3.5,
+                "metadata": {
+                    "url": "/abc"
+                },
+                "trasnformer": "sdk/abc",
+                "data": {
+                    "0": {
+                        "value": 7
+                    },
+                    "-1": {
+                        "value": 2.8
+                    },
+                    "1": {
+                        "value": 13
+                    }
+                }
+            }
+
+        }
+    }
+
   ]
 }

@@ -12,7 +12,7 @@ function App() {
   return (<div className="App">
     {
       currentComponent ? (
-        <RegionMolecule region={region}/>
+        <RegionMolecule location={region}/>
       ) : (
         <MyMap selectRegion={handleRegionClick}/>
       )

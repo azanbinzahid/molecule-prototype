@@ -4,17 +4,17 @@ export const mediumEffect = "#FFF9C4";
 export const parentColor = "#C5CAE9";
 export const nodeSize = 5;
 
+const colorMapping = {
+  aq_index: 'red',
+  deforestation_index: 'yellow',
+  industry_density_index: 'green',
+  literacy_rate_index: 'blue',
+  population_index: 'purple',
+  traffic_congession_index: 'cyan'
+}
+
 export const transformValToColor = (node) => {
-  if (node.isRoot) {
-    return parentColor;
-  }
-  if (node.val < 2) {
-    return minimialEffect;
-  }
-  if (node.val > 5) {
-    return strongEffect;
-  }
-  return mediumEffect;
+  return colorMapping[node.id]
 };
 export const transformValToSize = (node) => {
   return (nodeSize * node.val) / 1.5;

@@ -13,7 +13,7 @@ const Marker = (props) => {
           title={name}
         />
         <div className="pulse" />
-        <h1>{region.name}-{region['sources']['aq_index']['data']['T100']['value']}</h1>
+        <h1>{region.name}-{region['sources']['aq_index']['data']['0']['value']}</h1>
       </div>
     );
   };
