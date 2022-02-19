@@ -1,0 +1,11 @@
+{
+  "nodes": [
+    {"id":"Anarkali", "group":1, "level": 3},
+    {"id": "Greenry", "group":4, "level": 2},
+    {"id": "Industry", "group":10, "level": 1}
+  ],
+  "links": [
+    {"source": "Anarkali", "target": "Greenry", "value": 5},
+    {"source": "Anarkali", "target": "Industry", "value": 10}
+  ]
+}
