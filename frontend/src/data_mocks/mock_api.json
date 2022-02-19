@@ -1,7 +1,7 @@
 {
   "regions": [
       {
-          "name": "anarkali",
+          "name": "انارکلی",
           "lat": 245.678,
           "lng": 123.789,
           "radius": 23,
@@ -14,13 +14,13 @@
                   },
                   "trasnformer": "sdk/abc",
                   "data": {
-                      "T100": {
+                      "0": {
                           "value": 1
                       },
-                      "T101": {
+                      "-1": {
                           "value": 2
                       },
-                      "T102": {
+                      "1": {
                           "value": 3
                       }
                   }
@@ -33,13 +33,13 @@
                   },
                   "trasnformer": "sdk/abc",
                   "data": {
-                      "T100": {
+                      "0": {
                           "value": 3
                       },
-                      "T101": {
+                      "-1": {
                           "value": 4
                       },
-                      "T102": {
+                      "1": {
                           "value": 5
                       }
                   }
@@ -52,13 +52,13 @@
                 },
                 "trasnformer": "sdk/abc",
                 "data": {
-                    "T100": {
+                    "0": {
                         "value": 3
                     },
-                    "T101": {
+                    "-1": {
                         "value": 4
                     },
-                    "T102": {
+                    "1": {
                         "value": 5
                     }
                 }
@@ -71,13 +71,13 @@
               },
               "trasnformer": "sdk/abc",
               "data": {
-                  "T100": {
+                  "0": {
                       "value": 8
                   },
-                  "T101": {
+                  "-1": {
                       "value": 4
                   },
-                  "T102": {
+                  "1": {
                       "value": 5
                   }
               }
@@ -90,13 +90,13 @@
             },
             "trasnformer": "sdk/abc",
             "data": {
-                "T100": {
+                "0": {
                     "value": 8
                 },
-                "T101": {
+                "-1": {
                     "value": 4
                 },
-                "T102": {
+                "1": {
                     "value": 5
                 }
             }
@@ -109,13 +109,13 @@
                   },
                   "trasnformer": "sdk/abc",
                   "data": {
-                      "T100": {
+                      "0": {
                           "value": 7
                       },
-                      "T101": {
+                      "-1": {
                           "value": 2.8
                       },
-                      "T102": {
+                      "1": {
                           "value": 13
                       }
                   }

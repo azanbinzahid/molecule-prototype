@@ -1,85 +1,157 @@
 import React from "react";
 import ForceGraph3D from "react-force-graph-3d";
-import tempData from "../../data_mocks/sample.json";
-import RegionData from '../../data_mocks/mock_api.json';
-import {transform} from '../../utils/transformer';
+import RegionData from "../../data_mocks/mock_api.json";
+import LinearProgress from "@mui/material/LinearProgress";
+import { transform } from "../../utils/transformer";
+import PropTypes from "prop-types";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import TimeSlider from "./timeSeriesSlider";
+import { Slider } from "@mui/material";
+import {
+  transformValToColor,
+  transformValToSize,
+  generateLabelFromName,
+} from "./utilities.js";
+import "./index.css";
+// console.log(RegionData)
+
 const region = transform(RegionData.regions[0]);
-console.log(region);
-
-
-const strongEffect = "#F44336";
-const minimialEffect = "#4CAF50"
-const mediumEffect = "#FFF9C4";
-const parentColor = "#C5CAE9";
-const nodeSize = 5;
-
-const transformValToColor = (node) => {
-  if (node.isRoot) {
-    return parentColor;
-  }
-  if (node.val < 2){
-    return minimialEffect
-  }
-  if (node.val > 5) {
-    return strongEffect;
-  }
-  return mediumEffect;
-};
-const transformValToSize = (node) => {
-  return nodeSize * node.val/1.5;
-  // if(node.isRoot){
-  // }
-  // return nodeSize;
-};
-const generateLabelFromName = (node)=>{
-  return node.id.split(" ").join("\n");
-}
-
 
 const RegionMolecule = (props) => {
+  const regionName = RegionData.regions[0].name; //to change this to props
   const [data, setData] = React.useState({});
   const fetchData = async () => {
+    setData(region);
+  };
+  const handleTimeSeriesChange = (e, v) => {
+    const val = v.toString();
+    const newData = transform(RegionData.regions[0], val);
+    setData(newData);
+  };
+
+  const handleParameterChange = (coefficient, id, v)=>{
+    const tempData = {...data};
+    tempData.nodes = tempData.nodes.map((nodeValue, index)=>{
+      if(nodeValue.isRoot){
+        nodeValue.val = coefficient*v;
+      } 
+      if(nodeValue.id === id){
+        nodeValue.val = v;
+      }
+      return nodeValue;
+    })
     setData(tempData);
   };
+  function LinearSliderWithLabel({nodeCoefficient, nodeId, nodeValue}) {
+    const [value, setValue] = React.useState(nodeValue);
+    return (
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ width: "100%", mr: 1 }}>
+          <Slider
+            aria-label="Small steps"
+            defaultValue={value}
+            step={0.6}
+            marks
+            min={0}
+            max={10}
+            valueLabelDisplay="auto"
+            onChange={(e, v) => {
+              setValue(v);
+              handleParameterChange(nodeCoefficient, nodeId , v)
+            }}
+          />
+        </Box>
+        <Box sx={{ minWidth: 35 }}>
+          <Typography variant="body2" color="text.secondary">
+            {value}
+          </Typography>
+        </Box>
+      </Box>
+    );
+  }
+
+  LinearSliderWithLabel.propTypes = {
+    /**
+     * The value of the progress indicator for the determinate and buffer variants.
+     * Value between 0 and 100.
+     */
+    value: PropTypes.number.isRequired,
+  };
+
   React.useEffect(() => {
     try {
       fetchData();
     } catch (err) {
       throw ("CUSTOM ERROR", err);
     }
-  }, []);
+  }, [data]);
   if (!Object.keys(data).length) return <h3>Loding...</h3>;
   return (
-    <ForceGraph3D
-      graphData={region}
-      backgroundColor="white"
-      nodeAutoColorBy="group"
-      nodeResolution={100}
-      nodeVal={transformValToSize}
-      nodeColor={transformValToColor}
-      linkColor="#A5ABB6"
-      nodeLabel={generateLabelFromName}
-      linkOpacity={0.8}
-      linkWidth={1}
-      linkResolution={100}
-      linkCurvature={0.01}
-      linkDirectionalParticles={2}
-      onNodeDragEnd={(node) => {
-        node.fx = node.x;
-        node.fy = node.y;
-        node.fz = node.z;
-      }}
-      nodeCanvasObjectMode={() => 'after'}
-      nodeCanvasObject={(node, ctx, globalScale) => {
-        const label = '1234567890';
-        const fontSize = 18;
-        ctx.font = `${fontSize}px Sans-Serif`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillStyle = 'black'; //node.color;
-        ctx.fillText(label, node.x, node.y + 6);
-      }}
-    />
+    <div>
+      <div className="title">
+        <h2>{regionName}</h2>
+      </div>
+      <div className="container-main">
+        <div className="container-item legend">
+          <h3>Legend</h3>
+          <div>
+            {data.nodes.map((node, index) => {
+              return (
+                <div key={node.id} className={"legend-item"}>
+                  <div>
+                    <h5 className="legend-title">{node.id}</h5>
+                    <Box sx={{ width: "100%" }}>
+                      <LinearSliderWithLabel nodeCoefficient={node.coefficient} nodeId={node.id} nodeValue={node.val} />
+                    </Box>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className="graph">
+          <ForceGraph3D
+            graphData={data}
+            backgroundColor="white"
+            nodeAutoColorBy="group"
+            nodeResolution={100}
+            nodeVal={transformValToSize}
+            nodeColor={transformValToColor}
+            linkColor="#A5ABB6"
+            nodeLabel={generateLabelFromName}
+            linkOpacity={0.8}
+            linkWidth={1}
+            linkResolution={100}
+            linkCurvature={0.01}
+            linkDirectionalParticles={2}
+            onNodeDragEnd={(node) => {
+              node.fx = node.x;
+              node.fy = node.y;
+              node.fz = node.z;
+            }}
+            nodeCanvasObjectMode={() => "after"}
+            nodeCanvasObject={(node, ctx, globalScale) => {
+              const label = "1234567890";
+              const fontSize = 18;
+              ctx.font = `${fontSize}px Sans-Serif`;
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              ctx.fillStyle = "black"; //node.color;
+              ctx.fillText(label, node.x, node.y + 6);
+            }}
+            height={700}
+            width={900}
+          />
+          <div className="slider">
+            <h3>Time Series</h3>
+            <br />
+            <TimeSlider handleChange={handleTimeSeriesChange} />
+          </div>
+        </div>
+        <div className="container-item values_form"></div>
+      </div>
+    </div>
   );
 };
 export default RegionMolecule;

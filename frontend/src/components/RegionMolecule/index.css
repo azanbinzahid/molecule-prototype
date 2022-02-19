@@ -1,0 +1,31 @@
+.graph{
+  /* border: 1px solid red; */
+}
+.container-main{
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.container-item{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+.values_form{
+  min-width: 400px !important
+}
+.slider{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.legend{
+  min-width: 400px !important
+}
+.legend-item{
+  padding: 15px 50px 15px 50px;
+}
+.legend-title{
+  text-align: left;
+}
