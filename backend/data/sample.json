@@ -43,7 +43,27 @@
                             "value": 5
                         }
                     }
+                },
+                "population_index": {
+                    "source": "json",
+                    "coefficient": 3.5,
+                    "metadata": {
+                        "url": "/abc"
+                    },
+                    "trasnformer": "sdk/abc",
+                    "data": {
+                        "T100": {
+                            "value": 7
+                        },
+                        "T101": {
+                            "value": 2.8
+                        },
+                        "T102": {
+                            "value": 13
+                        }
+                    }
                 }
+
             }
         }
     ]
