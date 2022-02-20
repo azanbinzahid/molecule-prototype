@@ -89,6 +89,7 @@ const RegionMolecule = ({location}) => {
     const fg = fgRef.current;
     if (fg) {
       fg.d3Force('link').distance(link => 70)
+      // fg.d3Force('link').color(link => '#F50057')
     }
     try {
       if(!Object.keys(data).length){
@@ -132,7 +133,7 @@ const RegionMolecule = ({location}) => {
             nodeResolution={100}
             nodeVal={transformValToSize}
             nodeColor={transformValToColor}
-            linkColor="#A5ABB6"
+            linkColor={() => '#03A9F4'}
             nodeLabel={generateLabelFromName}
             linkOpacity={0.8}
             linkWidth={1}

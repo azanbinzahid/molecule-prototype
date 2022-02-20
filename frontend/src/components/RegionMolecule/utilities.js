@@ -5,12 +5,12 @@ export const parentColor = "#C5CAE9";
 export const nodeSize = 5;
 
 export const colorMapping = {
-  aq_index: 'red',
-  deforestation_index: 'yellow',
-  industry_density_index: 'green',
-  literacy_rate_index: 'blue',
-  population_index: 'purple',
-  traffic_congession_index: 'cyan'
+  aq_index: '#D50000',
+  deforestation_index: '#009688',
+  industry_density_index: '#673AB7',
+  literacy_rate_index: '#FF9800',
+  population_index: '#795548',
+  traffic_congession_index: '#78909C'
 }
 
 export const transformValToColor = (node) => {

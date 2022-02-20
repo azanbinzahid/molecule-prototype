@@ -15,6 +15,7 @@ const MyMap = ({selectRegion}) => {
         return {
           disableDefaultUI: true,
           mapTypeControl: true,
+          mapType: 'Satellite',
           streetViewControl: true,
           styles: stylers,
         };
