@@ -1,7 +1,7 @@
 {
     "regions": [
         {
-            "name": "Anarkali",
+            "name": "انارکلی",
             "lat": 31.5698,
             "lng": 74.3120,
             "radius": 23,
@@ -242,7 +242,7 @@
             }
         },
         {
-            "name": "Iqbal Town",
+            "name": "اقبال ٹاؤن",
             "lat": 31.5124,
             "lng": 74.2845,
             "radius": 23,
@@ -483,7 +483,7 @@
             }
         },
         {
-            "name": "Airport",
+            "name": "Airport (ہوائی اڈہ)",
             "lat": 31.5188,
             "lng": 74.4237,
             "radius": 23,

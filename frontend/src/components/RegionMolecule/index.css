@@ -11,8 +11,13 @@
   flex-direction: column;
   /* border: 1px solid black; */
 }
-.values_form{
-  min-width: 400px !important
+.smart_solutions{
+  min-width: 500px !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 78vh;
+  text-align: start;
+  padding: 50px;
 }
 .slider{
   display: flex;
@@ -33,4 +38,34 @@
 .scene-tooltip {
   color: black !important;
   font-weight: bold;
+}
+.high_impact{
+  color: green;
+  text-decoration: underline;
+}
+.low_impact{
+  color: rgb(255, 157, 0);
+  text-decoration: underline;
+}
+
+.smart_solution_title{
+  font-weight: normal;
+  font-style: italic;
+}
+.section_title{
+  font-weight: normal;
+  font-size: 1.6em;
+}
+.title{
+  font-weight: normal;
+  font-size: 2em;
+  margin-bottom: -40px;
+}
+.smart_solution_title:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.im_graph{
+  width: 80vw;
+  height: 40vw;
 }
