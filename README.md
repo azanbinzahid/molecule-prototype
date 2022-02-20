@@ -1,2 +1,2 @@
 # molecule
-Submittion Project for CoHack 2022
+Submission Project for CoHack 2022
