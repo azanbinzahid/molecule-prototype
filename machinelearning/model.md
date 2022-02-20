@@ -1,6 +1,5 @@
 We have performed the retrospective data analysis and calculated the regression coefficients which were used to predict the future Air Quality Index in accordance with the weights of factor impacting the AIr Quality Index in their own capacity.
-We have placed the raw data point graph as well as the trained modelling data graphs in the respective folder.  
- Transportation  Vs AQI 
+We have placed the raw data point graph as well as the trained modelling data graphs in the respective folder. Transportation  Vs AQI 
 ![transport_raw](https://user-images.githubusercontent.com/73774815/154836431-b38dbcad-d593-4a92-93b7-b2dbe35ce9c2.PNG)
 ![transport_modelled](https://user-images.githubusercontent.com/73774815/154833997-1e6b4a9a-5753-4ade-b894-ce14cdc59d2d.PNG)
 Industrialization vs AQI 
