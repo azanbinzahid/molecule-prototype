@@ -16,8 +16,8 @@ export default function TimeSlider({handleChange}) {
         valueLabelDisplay="auto"
         step={1}
         marks
-        min={-1}
-        max={1}
+        min={-5}
+        max={6}
         valueLabelFormat={v=>{
           if(v < 0){
             return `T ${v} days.`

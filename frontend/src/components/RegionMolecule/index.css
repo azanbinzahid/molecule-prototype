@@ -29,3 +29,8 @@
 .legend-title{
   text-align: left;
 }
+
+.scene-tooltip {
+  color: black !important;
+  font-weight: bold;
+}

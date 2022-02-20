@@ -8,10 +8,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TimeSlider from "./timeSeriesSlider";
 import { Slider } from "@mui/material";
+
 import {
   transformValToColor,
   transformValToSize,
   generateLabelFromName,
+  colorMapping
 } from "./utilities.js";
 import "./index.css";
 // console.log(RegionData)
@@ -32,10 +34,10 @@ const RegionMolecule = ({location}) => {
   };
 
   const handleParameterChange = (coefficient, id, v)=>{
-    const tempData = {...data};
+    const tempData = {...region};
     tempData.nodes = tempData.nodes.map((nodeValue, index)=>{
       if(nodeValue.isRoot){
-        nodeValue.val = coefficient*v;
+        nodeValue.val = (coefficient*v).toFixed(2);
       } 
       if(nodeValue.id === id){
         nodeValue.val = v;
@@ -50,6 +52,8 @@ const RegionMolecule = ({location}) => {
       <Box sx={{ display: "flex", alignItems: "center" }}>
         <Box sx={{ width: "100%", mr: 1 }}>
           <Slider
+            style={{"color": colorMapping[nodeId]}}
+
             aria-label="Small steps"
             defaultValue={value}
             step={0.6}
@@ -79,8 +83,13 @@ const RegionMolecule = ({location}) => {
   //    */
   //   value: PropTypes.number.isRequired,
   // };
+  const fgRef = React.useRef();
 
   React.useEffect(() => {
+    const fg = fgRef.current;
+    if (fg) {
+      fg.d3Force('link').distance(link => 70)
+    }
     try {
       if(!Object.keys(data).length){
         fetchData();
@@ -115,6 +124,8 @@ const RegionMolecule = ({location}) => {
         </div>
         <div className="graph">
           <ForceGraph3D
+            ref={fgRef}
+            zoom={10}
             graphData={data}
             backgroundColor="white"
             nodeAutoColorBy="group"

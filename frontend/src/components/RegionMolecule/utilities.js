@@ -4,7 +4,7 @@ export const mediumEffect = "#FFF9C4";
 export const parentColor = "#C5CAE9";
 export const nodeSize = 5;
 
-const colorMapping = {
+export const colorMapping = {
   aq_index: 'red',
   deforestation_index: 'yellow',
   industry_density_index: 'green',
@@ -17,9 +17,10 @@ export const transformValToColor = (node) => {
   return colorMapping[node.id]
 };
 export const transformValToSize = (node) => {
-  return (nodeSize * node.val) / 1.5;
-  // if(node.isRoot){
-  // }
+  if(node.isRoot){
+    return (5 * nodeSize * node.val);
+  }
+  return (nodeSize * node.val);
   // return nodeSize;
 };
 export const generateLabelFromName = (node) => {
