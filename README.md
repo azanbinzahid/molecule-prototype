@@ -1,3 +1,9 @@
+# Project Molecule
+This project is an attempt to identify causing factors and possibly solve high AQI in Lahore, and ideally at any given location in the world. We are aiming to unify data from multiple sources, normalizing and modelling it in the form of graphical representations. This will show high AQI indicators and their correlation with various factors at a particular geospatial location. It will also provide a viable, environmental friendly, economical and smart solutions that can be implemented at area level.
+
+# Docs:
+Read detailed documenation at [docs](/docs).
+
 # Screenshots:
 
 ## Landing Page:
@@ -21,3 +27,6 @@
 
 ## Smart Solutions:
 ![Recording 2022-02-21 at 21 14 45](https://user-images.githubusercontent.com/47540683/154992237-6299439c-b4de-4bb8-9a60-ee62cfecd772.gif)
+
+# Disclaimer
+The data used and shows is placeholder and dummy to fit given implementation of visualization. 
